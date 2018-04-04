@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
 
@@ -6,23 +7,19 @@ public class PlayerView : MonoBehaviour {
 	public GameObject store;
 	public GameObject action;
 
-	// private PlayerAction playerAction;
-	// private PlayerReducer playerReducer;
+	public Text hpText;
 
-	// private Vector3 target;
+	private ActionCreator _actionCreator;
+	private Player _player;
 
-	// void Start() {
-	// 	playerAction = action.GetComponent<PlayerAction>();
-	// 	playerReducer = store.GetComponent<PlayerReducer>();
+	void Start() {
+		_player = store.GetComponent<Player>();
+		_actionCreator = action.GetComponent<ActionCreator>();
 
-	// 	playerReducer.target.Subscribe( position => target = position );
-
-	// 	this.UpdateAsObservable()
-	// 		.Where( _ => transform.position != target)
-	// 		.Subscribe( _ => transform.position = Vector3.MoveTowards(transform.position, target, 0.1f) );
+		_player.hp.SubscribeToText(hpText);
 		
-	// 	this.UpdateAsObservable()
-	// 		.Where( _ => Input.GetKeyUp(KeyCode.Space))
-	// 		.Subscribe( _ =>  playerAction.MoveTo(new Vector3(10, 0 ,0)));
-	// }
+		this.UpdateAsObservable()
+			.Where( _ => Input.GetKeyUp(KeyCode.Space))
+			.Subscribe( _ =>  _actionCreator.Attack(AttackTarget.ENEMY, 1));
+	}
 }

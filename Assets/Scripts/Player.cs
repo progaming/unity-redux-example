@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 		switch(baseAction.name){
 			case "ATTACK":
 				AttackAction action = payload as AttackAction;
-				hp.Value = action.target == AttackTarget.PLAYER ? hp.Value - 1 : hp.Value;
+				hp.Value = action.target == AttackTarget.PLAYER ? hp.Value - action.power : hp.Value;
 				break;
 			default:
 				break;
