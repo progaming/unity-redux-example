@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UniRx;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour, IReducer {
 	public IntReactiveProperty hp;
 
 	void Start(){
 		hp.Value = 100;
 	}
 
-	void Reduce(object payload){
+	public void Reduce(object payload){
 		BaseAction baseAction = payload as BaseAction;
 		switch(baseAction.name){
 			case "ATTACK":
