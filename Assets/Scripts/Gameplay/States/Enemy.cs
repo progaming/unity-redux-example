@@ -10,11 +10,11 @@ namespace ReduxExample.Gameplay.States {
 		}
 		
 		public void Reduce(object payload){
-			BaseAction baseAction = payload as BaseAction;
-			switch(baseAction.name){
+			ActionBase action = payload as ActionBase;
+			switch(action.name){
 				case "ATTACK":
-					AttackAction action = payload as AttackAction;
-					hp.Value = action.target == AttackTarget.ENEMY ? hp.Value - action.power : hp.Value;
+					AttackAction attackAction = payload as AttackAction;
+					hp.Value = attackAction.target == AttackTarget.ENEMY ? hp.Value - attackAction.power : hp.Value;
 					break;
 				default:
 					break;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseDispatcher {
-	protected BaseStore _store;
-	public void Init(BaseStore store){
+public class DispatcherBase {
+	protected StoreBase _store;
+	public void Init(StoreBase store){
 		_store = store;
 	}
 

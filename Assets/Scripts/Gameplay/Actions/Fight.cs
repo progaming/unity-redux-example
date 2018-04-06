@@ -8,7 +8,7 @@ namespace ReduxExample.Gameplay.Actions
 		ENEMY
 	}
 
-	public class AttackAction: BaseAction {
+	public class AttackAction: ActionBase {
 		public AttackTarget target;
 		public int power;
 		
@@ -21,7 +21,7 @@ namespace ReduxExample.Gameplay.Actions
 	#endregion
 
 	#region dispatchers
-	public class Fight: BaseDispatcher {
+	public class Fight: DispatcherBase {
 		public void Attack(AttackTarget target, int power){
 			Dispatch(new AttackAction(target, power));
 		}

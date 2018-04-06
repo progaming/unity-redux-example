@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class BaseStore {
+public class StoreBase {
 	private List<IReducer> _reducers;
 	public void Init(){
 		_reducers = this.GetType().GetProperties()
