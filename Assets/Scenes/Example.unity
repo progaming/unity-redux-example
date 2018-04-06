@@ -140,8 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca34d456e6b44b74e987986378e43de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creator: {fileID: 371252572}
-  store: {fileID: 371252571}
+  redux: {fileID: 371252571}
   hpText: {fileID: 1985932184}
 --- !u!4 &3597928
 Transform:
@@ -164,7 +163,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 371252573}
-  - component: {fileID: 371252572}
   - component: {fileID: 371252571}
   m_Layer: 0
   m_Name: Redux
@@ -181,18 +179,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 371252570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52684da7d2642a44586915ccc0a91f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &371252572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 371252570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be8e36f651a37bd41ba1dbe4b2592587, type: 3}
+  m_Script: {fileID: 11500000, guid: f39fa50f3106cb743860f3a091436276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &371252573
@@ -457,8 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6488b68d507fc174da177a7f84ce0e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creator: {fileID: 371252572}
-  store: {fileID: 371252571}
+  redux: {fileID: 371252571}
   hpText: {fileID: 429832397}
 --- !u!4 &1395227521
 Transform:
