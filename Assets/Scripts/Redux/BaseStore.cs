@@ -2,9 +2,9 @@
 using System.Linq;
 using UnityEngine;
 
-public class BaseStore : MonoBehaviour {
+public class BaseStore {
 	private List<IReducer> _reducers;
-	protected void Awake(){
+	public void Init(){
 		_reducers = this.GetType().GetProperties()
 			// Include only the properties that implement IReducer
 			.Where(prop => prop.PropertyType.GetInterfaces().Contains(typeof(IReducer)))

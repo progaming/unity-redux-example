@@ -2,10 +2,8 @@
 using System.Linq;
 using UnityEngine;
 
-public class BaseCreator : MonoBehaviour {
-	protected void Awake(){
-		BaseStore store = GetComponent<BaseStore>();
-
+public class BaseCreator {
+	public void Init(BaseStore store){
 		var _creators = this.GetType().GetProperties()
 			.Where(prop => prop.PropertyType.IsSubclassOf(typeof(BaseDispatcher)))
 			.Select(prop => prop.GetValue(this) as BaseDispatcher)
