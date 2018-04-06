@@ -10,20 +10,20 @@ namespace ReduxExample.Gameplay {
 		public GameObject redux;
 		public Text hpText;
 
-		private State _state;
+		private Store _store;
 		private Action _action;
 
 		void Awake() {
 			_action = redux.GetComponent<Action>();
-			_state = redux.GetComponent<State>();
+			_store = redux.GetComponent<Store>();
 		}
 
 		void Start() {
-			_state.Player.hp.SubscribeToText(hpText);
+			_store.Player.hp.SubscribeToText(hpText);
 			
 			this.UpdateAsObservable()
 				.Where( _ => Input.GetKeyUp(KeyCode.Space))
-				.Where( _ => _state.Enemy.hp.Value > 0)
+				.Where( _ => _store.Enemy.hp.Value > 0)
 				.Subscribe( _ =>  _action.Fight.Attack(AttackTarget.ENEMY, 1));
 		}
 	}

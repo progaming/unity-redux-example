@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace ReduxExample.Gameplay {
-	public class State : MonoBehaviour {
+	public class Store : MonoBehaviour {
 		public Player Player {get;} = new Player(100);
 		public Enemy Enemy {get;} = new Enemy(100);
 

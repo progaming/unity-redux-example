@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace ReduxExample.Gameplay {
     public class Action : MonoBehaviour {
-			public State state;
+			public Store store;
 			public Fight Fight {get; private set;}
 
 			public void Awake(){
-				Fight = new Fight(state);
+				Fight = new Fight(store);
 			}
     }
 }

@@ -10,17 +10,17 @@ namespace ReduxExample.Gameplay {
 		public GameObject redux;
 		public Text hpText;
 
-		private State _state;
+		private Store _store;
 		private Action _action;
 
 		void Awake() {
 			_action = redux.GetComponent<Action>();
-			_state = redux.GetComponent<State>();
+			_store = redux.GetComponent<Store>();
 		}
 
 		void Start() {
 
-			_state.Enemy.hp.SubscribeToText(hpText);
+			_store.Enemy.hp.SubscribeToText(hpText);
 
 			this.UpdateAsObservable()
 				.ThrottleFirstFrame(60)

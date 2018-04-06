@@ -3,14 +3,14 @@
 namespace ReduxExample.Gameplay.Actions
 {
 	public class Fight {
-		private State _state;
+		private Store _store;
 
-		public Fight(State state){
-			_state = state;
+		public Fight(Store store){
+			_store = store;
 		}
 
 		public void Attack(AttackTarget target, int power){
-			_state.Dispatch(new AttackAction(target, power));
+			_store.Dispatch(new AttackAction(target, power));
 		}
 	}
 }
