@@ -11,10 +11,10 @@ namespace ReduxExample.Gameplay {
 		public Text hpText;
 
 		private Store _store;
-		private Action _action;
+		private Creator _creator;
 
 		void Awake() {
-			_action = redux.GetComponent<Action>();
+			_creator = redux.GetComponent<Creator>();
 			_store = redux.GetComponent<Store>();
 		}
 
@@ -24,7 +24,7 @@ namespace ReduxExample.Gameplay {
 
 			this.UpdateAsObservable()
 				.ThrottleFirstFrame(60)
-				.Subscribe( _ =>  _action.Fight.Attack(AttackTarget.PLAYER, 1));
+				.Subscribe( _ =>  _creator.Fight.Attack(AttackTarget.PLAYER, 1));
 		}
 	}
 }

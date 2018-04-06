@@ -2,10 +2,9 @@
 
 namespace ReduxExample.Gameplay.Actions
 {
-	public class Fight: BaseActionCreator {
+	public class Fight: BaseDispatcher {
 		public void Attack(AttackTarget target, int power){
-			_store.Dispatch(new AttackAction(target, power));
+			Dispatch(new AttackAction(target, power));
 		}
 	}
 }
-
