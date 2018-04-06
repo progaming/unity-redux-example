@@ -1,5 +1,5 @@
-﻿using ReduxExample.Gameplay.Actions;
-using UniRx;
+﻿using UniRx;
+using ReduxExample.Gameplay.Actions;
 
 namespace ReduxExample.Gameplay.States {
 	public class Player : IReducer {

@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
-
 using ReduxExample.Gameplay.Actions;
 
 namespace ReduxExample.Gameplay {
