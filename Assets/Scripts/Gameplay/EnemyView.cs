@@ -2,19 +2,21 @@
 using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
-using ReduxExample.Gameplay.Actions;
 
-namespace ReduxExample.Gameplay {
-	public class EnemyView : MonoBehaviour {
-		public Redux redux;
-		public Text hpText;
+namespace ReduxExample.Gameplay
+{
+    public class EnemyView : MonoBehaviour
+    {
+        public Redux redux;
+        public Text hpText;
 
-		void Start() {
-			redux.store.Enemy.hp.SubscribeToText(hpText);
+        void Start()
+        {
+            redux.store.Enemy.hp.SubscribeToText(hpText);
 
-			this.UpdateAsObservable()
-				.ThrottleFirstFrame(60)
-				.Subscribe( _ =>  redux.creator.Fight.Attack(AttackTarget.PLAYER, 1));
-		}
-	}
+            this.UpdateAsObservable()
+                .ThrottleFirstFrame(60)
+                .Subscribe(_ => redux.creator.Fight.Attack(AttackTarget.PLAYER, 1));
+        }
+    }
 }

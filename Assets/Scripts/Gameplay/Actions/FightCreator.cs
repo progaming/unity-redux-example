@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace ReduxExample.Gameplay.Actions
+namespace ReduxExample.Gameplay
 {
 	#region types
 	public enum AttackTarget{
