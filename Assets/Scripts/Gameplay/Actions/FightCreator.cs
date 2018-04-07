@@ -21,7 +21,7 @@ namespace ReduxExample.Gameplay.Actions
 	#endregion
 
 	#region dispatchers
-	public class Fight: DispatcherBase {
+	public class FightCreator: DispatcherBase {
 		public void Attack(AttackTarget target, int power){
 			Dispatch(new AttackAction(target, power));
 		}

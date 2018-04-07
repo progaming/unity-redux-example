@@ -14,12 +14,12 @@ namespace ReduxExample.Gameplay {
 	}
 	
 	public class Store : StoreBase {
-		public Player Player {get;} = new Player(100);
-		public Enemy Enemy {get;} = new Enemy(100);
+		public PlayerState Player {get;} = new PlayerState(100);
+		public EnemyState Enemy {get;} = new EnemyState(100);
 	}
 
 	public class Creator : CreatorBase {
-		public Fight Fight {get;} = new Fight();
+		public FightCreator Fight {get;} = new FightCreator();
 	}
 }
 

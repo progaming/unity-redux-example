@@ -2,10 +2,10 @@
 using ReduxExample.Gameplay.Actions;
 
 namespace ReduxExample.Gameplay.States {
-	public class Player : IReducer {
+	public class PlayerState : IReducer {
 		public IntReactiveProperty hp = new IntReactiveProperty();
 
-		public Player(int initialHp){
+		public PlayerState(int initialHp){
 			hp.Value = initialHp;
 		}
 		
