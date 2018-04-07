@@ -1,3 +1,4 @@
-﻿public class ActionBase {
-	public string name;
+﻿public class ActionBase
+{
+    public string name;
 }

@@ -1,3 +1,4 @@
-﻿public interface IReducer {
-	void Reduce(object payload);
+﻿public interface IReducer
+{
+    void Reduce(object payload);
 }
