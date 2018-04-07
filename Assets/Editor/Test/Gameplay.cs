@@ -3,7 +3,6 @@ using UnityEngine.TestTools;
 using NUnit.Framework;
 
 using ReduxExample.Gameplay;
-using ReduxExample.Gameplay.Actions;
 
 namespace ReduxExample.Test{
 	[TestFixture]
