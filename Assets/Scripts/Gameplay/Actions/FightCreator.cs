@@ -17,11 +17,7 @@ namespace ReduxExample.Gameplay
             payload.target = target;
             payload.power = power;
 
-            dynamic action = new ExpandoObject();
-            action.name = "FIGHT_ATTACK";
-            action.payload = payload;
-
-            Dispatch(action);
+            Dispatch(new Action("FIGHT_ATTACK", payload));
         }
     }
 }
