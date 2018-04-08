@@ -6,8 +6,8 @@
         _store = store;
     }
 
-    protected void Dispatch(object payload)
+    protected void Dispatch(dynamic action)
     {
-        _store.Dispatch(payload);
+        _store.Dispatch(action);
     }
 }

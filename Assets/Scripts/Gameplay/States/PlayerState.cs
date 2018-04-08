@@ -11,14 +11,12 @@ namespace ReduxExample.Gameplay
             hp.Value = initialHp;
         }
 
-        public void Reduce(object payload)
+        public void Reduce(dynamic action)
         {
-            ActionBase action = payload as ActionBase;
-            switch (action.name)
+            switch (action.name as string)
             {
                 case "FIGHT_ATTACK":
-                    FightAttack fightAttack = payload as FightAttack;
-                    hp.Value = fightAttack.target == AttackTarget.PLAYER ? hp.Value - fightAttack.power : hp.Value;
+                    hp.Value = action.payload.target == AttackTarget.PLAYER ? hp.Value - action.payload.power : hp.Value;
                     break;
                 default:
                     break;

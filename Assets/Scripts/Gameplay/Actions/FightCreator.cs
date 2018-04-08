@@ -1,30 +1,27 @@
-﻿using UnityEngine;
+﻿using System.Dynamic;
+using UnityEngine;
 
 namespace ReduxExample.Gameplay
 {
-	#region types
-	public enum AttackTarget{
-		PLAYER,
-		ENEMY
-	}
+    public enum AttackTarget
+    {
+        PLAYER,
+        ENEMY
+    }
 
-	public class FightAttack: ActionBase {
-		public AttackTarget target;
-		public int power;
-		
-		public FightAttack(AttackTarget target, int power){
-			this.name = "FIGHT_ATTACK";
-			this.target = target;
-			this.power = power;
-		}
-	}
-	#endregion
+    public class FightCreator : DispatcherBase
+    {
+        public void Attack(AttackTarget target, int power)
+        {
+            dynamic payload = new ExpandoObject();
+            payload.target = target;
+            payload.power = power;
 
-	#region dispatchers
-	public class FightCreator: DispatcherBase {
-		public void Attack(AttackTarget target, int power){
-			Dispatch(new FightAttack(target, power));
-		}
-	}
-	#endregion
+            dynamic action = new ExpandoObject();
+            action.name = "FIGHT_ATTACK";
+            action.payload = payload;
+
+            Dispatch(action);
+        }
+    }
 }
