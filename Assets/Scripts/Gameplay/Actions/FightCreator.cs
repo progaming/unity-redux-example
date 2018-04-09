@@ -13,11 +13,25 @@ namespace ReduxExample.Gameplay
     {
         public void Attack(AttackTarget target, int power)
         {
+            Dispatch(new {
+                name = "FIGHT_ATTACK",
+                payload = new {
+                    target,
+                    power
+                }
+            });
+            // This can be done with ExpandoObject as well
+            /* 
             dynamic payload = new ExpandoObject();
             payload.target = target;
             payload.power = power;
 
-            Dispatch(new Action("FIGHT_ATTACK", payload));
+            dynamic action = new ExpandoObject();
+            action.name = "FIGHT_ATTACK";
+            action.payload = payload;
+
+            Dispatch(action);
+            */
         }
     }
 }
