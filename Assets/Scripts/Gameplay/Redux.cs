@@ -4,11 +4,13 @@ namespace ReduxExample.Gameplay
 {
     public class Redux : MonoBehaviour
     {
-        public Creator creator = new Creator();
-        public Store store = new Store();
+        public Store store;
+        public Creator creator;
 
         void Awake()
         {
+            store = new Store();
+            creator = new Creator();
             store.Init();
             creator.Init(store);
         }
