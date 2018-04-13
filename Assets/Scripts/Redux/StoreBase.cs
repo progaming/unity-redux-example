@@ -6,11 +6,11 @@ public class StoreBase
     private List<IReducer> _reducers;
     public void Init()
     {
-        _reducers = this.GetType().GetProperties()
+        _reducers = this.GetType().GetFields()
             // Include only the properties that implement IReducer
-            .Where(prop => prop.PropertyType.GetInterfaces().Contains(typeof(IReducer)))
+            .Where(f => f.GetValue(this).GetType().GetInterfaces().Contains(typeof(IReducer)))
             // Cast to IReducer and convert them to list
-            .Select(prop => prop.GetValue(this) as IReducer)
+            .Select(f => f.GetValue(this) as IReducer)
             .ToList();
     }
     public void Dispatch(object payload)
