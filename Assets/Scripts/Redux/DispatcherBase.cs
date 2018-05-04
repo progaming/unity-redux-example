@@ -2,14 +2,14 @@
 
 public class DispatcherBase
 {
-    protected StoreBase _store;
+    protected StoreBase store;
     public void Init(StoreBase store)
     {
-        _store = store;
+        this.store = store;
     }
 
     protected void Dispatch(dynamic action)
     {
-        _store.Dispatch(action);
+        store.Dispatch(action);
     }
 }
