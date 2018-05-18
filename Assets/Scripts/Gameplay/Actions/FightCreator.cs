@@ -14,7 +14,7 @@ namespace ReduxExample.Gameplay
         public void Attack(AttackTarget target, int power)
         {
             Dispatch(new {
-                name = "FIGHT_ATTACK",
+                type = "FIGHT_ATTACK",
                 payload = new {
                     target,
                     power
@@ -27,7 +27,7 @@ namespace ReduxExample.Gameplay
             payload.power = power;
 
             dynamic action = new ExpandoObject();
-            action.name = "FIGHT_ATTACK";
+            action.type = "FIGHT_ATTACK";
             action.payload = payload;
 
             Dispatch(action);

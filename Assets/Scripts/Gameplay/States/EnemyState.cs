@@ -13,7 +13,7 @@ namespace ReduxExample.Gameplay
 
         public void Reduce(dynamic action)
         {
-            switch (action.name as string)
+            switch (action.type as string)
             {
                 case "FIGHT_ATTACK":
                     hp.Value = action.payload.target == AttackTarget.ENEMY ? hp.Value - action.payload.power : hp.Value;

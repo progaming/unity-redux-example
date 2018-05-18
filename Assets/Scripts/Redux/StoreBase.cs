@@ -16,7 +16,7 @@ public class StoreBase
             .Select(f => f.GetValue(this) as IReducer)
             .ToList();
     }
-    public void Dispatch(object action)
+    public void Dispatch(dynamic action)
     {
         middlewares.ToList().ForEach(m => action = m.Apply(action));
         reducers.ForEach(r => r.Reduce(action));
